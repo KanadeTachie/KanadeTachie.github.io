@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Exam 1 - 01 - Basics of Counting</title>
+		<title>Exam 2 - 02 - Probability Theory</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,72 +35,120 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Exam 1 - 01 - Basics of Counting</h1>
+										<h1>Exam 2 - 02 - Probability Theory</h1>
 									</header>
 
-									<span class="image main"><img src="images/E1-01-01.PNG" alt="" style="width: 50%" /></span>
+									<span class="image main"><img src="images/E2-02-01.png" alt="" style="width: 80%" /></span>
 									<hr class="major" />
 
 									<h2>1. Overall Learnings / Summary of the Topic</h2>
-									<p><b>Combinatorics</b><br>
-										The study of arrangements of objects. It essentially talks about the patterns that may arise when objects are randomly arranged with certain properties.<br> These include permutation, enumeration, and combinations of the set of given elements. 
-										<br><br><b>Basic Counting Principles</b>
+									<div class="box">
+										<b>From Finite Probability</b><br>
+										<b>Experiment</b>
+										<br>A procedure that yields one of a given set of possible outcomes.
+										<br><br><b>Sample Space</b>
+										<br>The set of possible outcomes
+										<br><br><b>Event</b> 
+										<br>A subset of the sample space. An event is part of all the possible outcomes.
+
+										<br><b>p(E) = | E | / | S |</b>
+										<br>Where E is the number of outcomes divided by the total number of outcomes S.
+										</div>
+									
+
 										
-										<div class="box">
-											<b><h4>Product rule</h4></b>
-											- <b>n1(first task) * n2(second task)</b> ways to do a procedure<br>
-											- Applicable when a procedure is made up of separate tasks<br><br>
-											<b>When order matters:</b><br>
-											Permutation is used<br>
-											- n! / (n-r)!<br>
-											- P(n,r) when the order of a choice matters (Also known as an r-permutation)<br><br>
-											<b>Set Theoretic Version of Product Rule</b><br>
-											| AxB | = | A | * | B |<br>
-											When tasks are disjoint<br><br></div>
-										
-										<div class="box">
-										<b>Sum Rule</b><br>
-										If a task can be done with either one in n1 ways or n2 ways which no n-ways are the same:<br>
-										<b>n1 + n2</b> ways to do the task<br>
-										<br>
-										<b>Set Theoretic Version of the Sum Rule</b><br>
-										| A U B | = | A | + | B | <br>
-										When the tasks are disjoint
-										</p>
+									<div class="box">
+										<b><h4>Rules</h4></b>
+										Let S be the sample space of an experiment with a finite or countable number of outcomes. We assign a probability p(s) to each outcome s.
+										Two conditions must be met:
+										<br><b>1. The probability of each outcome is a nonnegative real number no greater than 1.</b>
+										<br><b>2. The sum of the probabilities of all possible outcomes should be 1.</b>
 									</div>
+									
+									<div class="box">
+										<b><h4>Definition 1</h4></b>
+										<b>Suppose that S is a set with n elements. The uniform distribution assigns the probability 1/n to each element of S.</b> 
+									</div>
+									<div class="box">
+										<b><h4>Definition 2</h4></b>
+										<b>The probability of the event E is the sum of the probabilities of the outcomes in E.</b>
+									</div>
+
 									<hr class="major" />
 
 									<h2>2. Analysis</h2>
-									<p>The basics of counting refer to the primary and fundamental concepts of finding all the possible arrangements of a certain object or finding all the possible outcomes of an event that is likely to happen. This part talks about the main principle of Combinatorics which finding all the possibilities using the product and sum rules. The basics of counting are crucial in many applications in computer science. For example, in the next part number: </p>
+									<p>Probability theory is an extension of the analysis from finite probability. Probability theory describes in detail the rules and definitions 
+										of finite probability. It suggests that no probability is greater than 1 or less than 0 (negative probability). The sum of all likelihood of 
+										some event will happen is and should always be 1. One cannot say that there is a 1000% percent that something will happen in an event.
+										Likewise, one cannot say that something will not happen by a -200%, as if the opposite of that event instead will happen. This topic sets
+										the rules and boundaries of what a probability should be and how likely such a probability will happen.
+
+									</p>
 									<hr class="major" />
 
 									<h2>3. Applications, Real-Life Scenarios or Examples</h2>
-									<p><b>Used in:  </b>
-									<br> - <b>Password Generation</b>
-									<br> -  <b>Voting Ballot</b>
-									<br> - 	Plate numbers
-									<br> - 	Communication Networks
+									<p><b>Used in: (Same as Finite Probability) </b>
+									<br> - Algorithms analysis
+									<br> -  Machine learning
 									<br> - 	Cryptography
-									<br> - 	Computer Algorithms
-									<br> - 	Probability for Machine Learning
+									<br> - 	Network Analysis
+									<br> - 	Games and Entertainment
 									<br><br>
-									<h3><b>Password Generation</b></h3><a href="#" class="image"><img src="images/E1-01-02.PNG" alt="" style="width: 80%"/></a>
-									<blockquote><b>Example 1.1.1 - Product Rule: </b> if you have a choice of 26 letters (n = 26) and need to create a 4-letter password (m = 4), the product rule tells us that there are 26^4 = 456,976 possible combinations.
-									<br>(Image not accurate but related)</blockquote>
+
+									<h3><b>Games and Entertainment</b></h3>
+									<a href="#" class="image"><img src="images/E2-02-02.png" alt="" style="width: 100%"/></a>
+									<blockquote><b>Example 2.2.1 - Die :</b> Suppose that a die is biased so that 3 appears twice as often as each other number but 
+										that the other five outcomes are equally likely. What is the probability that an odd number appears when we roll this die?
+
+										<br><br><b>Solution: </b><br>
+										The probability of rolling a dice number other than 3 is 
+										<br>P(n) = x for n is an element of {1,2,3,4,5,6} - {3}
+										<br>in which the dice numbers other than 3 are equally likely to appear. 
+
+										<br><br>P(3) = 2x since 3 appears twice as likely to appear than any other number. Thus by condition 2:
+										<br>P(1) + P(2) + P(3) + P(4) + P(5) +P(6) = 1
+										<br>x + x + 2x + x + x+ x = 1
+										<br>7x = 1
+										<br>x = 1/7 
+
+										<br><br>That means, p(1) = p(2) = p(4) = p(5) = p(6) = 1/7
+										<br>p(3) = 2/7
+
+										<br><br>Therefore p(E) = p(1) + p(3) + p(5) = 1/7 + 2/7 +1/7 = <b>4/7</b>
+
+									</blockquote>
 									</p>
 									
-									<h3><b>Password Generation</b></h3><a href="#" class="image"><img src="images/E1-01-03.PNG" alt="" style="width: 72%"/></a>
-									<blockquote><b>Example 1.1.2 - Sum Rule: </b> In an election, if there are 'n1' candidates running for president and 'n2' candidates running for vice president, the sum rule tells us that there are 'n1 + n2' possible combinations of the president and vice president. This principle applies when choices are mutually exclusive.
+									<a href="#" class="image"><img src="images/E2-02-03.png" alt="" style="width: 100%"/></a>
+									<blockquote><b>Example 2.2.2 - Coin Toss: </b> What probabilities should we assign to the outcomes H (heads) and T (tails) when a fair coin is
+										 flipped? What probabilities should be assigned to these outcomes when the coin is biased so that heads comes up twice as often as tails?
+
+										<br><br><b>Solution: </b><br>
+										Taken from the assumption that heads will come up twice as often as tails
+										<br><b>p(H) = 2p(T) </b>
+										<br>From the second condition that all probabilities of a sample space are equal to 1
+										<br><b>p(H) + p(T) = 1</b>
+										<br><br>Substitute:
+										<br>2p(T) + p(T) = 1
+										<br>3p(T) = 1
+										<br><b>p(T) 1/3 </b>
+										<br>
+										<b>We can conclude that p(T) = 1/3 and p(H) = 2/3. This means that the tails' chances of appearing are 1/3 while for the heads chances are 2/3.
+										</b>
 									</blockquote>
 
 									<hr class="major" />
 
 									<h2>4. Reflection and Thoughts</h2>
 									<p style="text-align: justify;">
-										The Basics of Counting is the first and essential topic that is introduced in this subject. It is the foundation of most of the mathematical logic for computers. Product and sum rules on their own are mostly easy to understand in problem-solving. Combining these rules will have unique questions and results which I find a bit difficult to understand. 
-										This topic and the questions and problems along with it are difficult to distinguish from another topic in the next few lessons of the course, mainly permutations, and combinations. 
-										Overall, this topic was quite challenging as a first topic for this course but is important for the entirety of it. 
-											
+										The topic of Probability theory extends the concepts of rules and definitions from finite probability. 
+										The addition of 2 new definitions and probability conditions made problems more complex but also made 
+										them easier to be broken down into solvable solutions. Just like how current topics solidify the previous
+										related one, these new concepts solidified my understanding of Finite Probability. It gave clear rules
+										as to what a probability must be and how it must be defined. Despite challenges, I managed to understand
+										the gist of it. Speaking from the past self where I did not yet fully understand the rules given in 
+										Probability theory, Bayes theorem applies all of the previous topics not just in exam 2 which makes 
+										the next topic the hardest one to understand for me so far.
 									</p>
 								</section>
 
@@ -128,25 +176,25 @@
 										<li>
 											<span class="opener">Topics : Exam 1</span>
 											<ul>
-												<li><a href="#">Exam 1 - 01 - Basics of Counting</a></li>
-												<li><a href="#">Exam 1 - 02 - Pigeonhole Principle</a></li>
-												<li><a href="#">Exam 1 - 03 - Permutation and Combination</a></li>
+												<li><a href="E1-01.html">Exam 1 - 01 - Basics of Counting</a></li>
+												<li><a href="E1-02.html">Exam 1 - 02 - Pigeonhole Principle</a></li>
+												<li><a href="E1-03.html">Exam 1 - 03 - Permutation and Combination</a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener">Topics : Exam 2</span>
 											<ul>
-												<li><a href="#">Exam 2 - 09 - Finite Probability</a></li>
-												<li><a href="#">Exam 2 - 10 - Probability Theory</a></li>
-												<li><a href="#">Exam 2 - 11 - Bayes Theorem</a></li>
+												<li><a href="E2-01.html">Exam 2 - 09 - Finite Probability</a></li>
+												<li><a href="E2-02.html">Exam 2 - 10 - Probability Theory</a></li>
+												<li><a href="E2-03.html">Exam 2 - 11 - Bayes Theorem</a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener">Topics : Exam 3</span>
 											<ul>
-												<li><a href="#">Exam 3 - 13 - Graphs and Graph Models</a></li>
-												<li><a href="#">Exam 3 - 17 - Euler and Hamiltonian Paths</a></li>
-												<li><a href="#">Exam 3 - 18 - Shortest Path Problems</a></li>
+												<li><a href="E3-01.html">Exam 3 - 13 - Graphs and Graph Models</a></li>
+												<li><a href="E3-02.html">Exam 3 - 17 - Euler and Hamiltonian Paths</a></li>
+												<li><a href="E3-03.html">Exam 3 - 18 - Shortest Path Problems</a></li>
 
 											</ul>
 										</li>
@@ -156,22 +204,25 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Other Topics in Exam 1:</h2>
+										<h2>Other Topics in Exam 2:</h2>
 									</header>
 									<div class="mini-posts">
 										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3>Exam 1 - 02 - Pigeonhole Principle</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<a href="E2-01.html" class="image"><img src="images/E2-01-01.png" alt="" /></a>
+											<h3>Exam 2 - 01 - finite Probability</h3>
+											<p>Analysis and computation of probabilities</p>
 										</article>
+										<ul class="actions">
+											<li><a href="E2-01.html" class="button">More</a></li>
+										</ul>
 										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<h3>Exam 1 - 03 - Permutation and Combination</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<a href="E2-03.html" class="image"><img src="images/E2-03-01.png" alt="" /></a>
+											<h3>Exam 2 - 03 - Bayes Theorem</h3>
+											<p>Describes the probability of an event happening, based on some prior knowledge of related conditions to the event.</p>
 										</article>
 									</div>
 									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
+										<li><a href="E2-03.html" class="button">More</a></li>
 									</ul>
 								</section>
 
@@ -184,14 +235,14 @@
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">knbehimino@up.edu.ph</a></li>
 										<li class="icon solid fa-phone">09267217227</li>
-										<li class="icon solid fa-home">Gneral Santos City,<br />
+										<li class="icon solid fa-home">General Santos City,<br />
 										Philippines</li>
 									</ul>
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; All rights reserved.  Design adapted from: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; All rights reserved.</p>
 								</footer>
 
 						</div>
