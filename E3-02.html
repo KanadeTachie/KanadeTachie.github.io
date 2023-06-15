@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Exam 1 - 01 - Basics of Counting</title>
+		<title>Exam 3 - 02 - Euler and Hamiltonian Paths</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,72 +35,107 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Exam 1 - 01 - Basics of Counting</h1>
+										<h1>Exam 3 - 02 - Euler and Hamiltonian Paths</h1>
 									</header>
 
-									<span class="image main"><img src="images/E1-01-01.PNG" alt="" style="width: 50%" /></span>
+									<span class="image main"><img src="images/E3-02-01.png" alt="" style="width: 50%" /></span>
 									<hr class="major" />
 
 									<h2>1. Overall Learnings / Summary of the Topic</h2>
-									<p><b>Combinatorics</b><br>
-										The study of arrangements of objects. It essentially talks about the patterns that may arise when objects are randomly arranged with certain properties.<br> These include permutation, enumeration, and combinations of the set of given elements. 
-										<br><br><b>Basic Counting Principles</b>
-										
+
+									<div class="box" style="border-width: 3px;">
+										<h3>Eulerian</h3>
 										<div class="box">
-											<b><h4>Product rule</h4></b>
-											- <b>n1(first task) * n2(second task)</b> ways to do a procedure<br>
-											- Applicable when a procedure is made up of separate tasks<br><br>
-											<b>When order matters:</b><br>
-											Permutation is used<br>
-											- n! / (n-r)!<br>
-											- P(n,r) when the order of a choice matters (Also known as an r-permutation)<br><br>
-											<b>Set Theoretic Version of Product Rule</b><br>
-											| AxB | = | A | * | B |<br>
-											When tasks are disjoint<br><br></div>
-										
+											<b>Eulerian Path</b><br>
+											Eulerian trial, Euler walk
+											<br>A path that uses each edge precisely once. If such a path exists, the graph is called traversable.
+										</div>
+	
 										<div class="box">
-										<b>Sum Rule</b><br>
-										If a task can be done with either one in n1 ways or n2 ways which no n-ways are the same:<br>
-										<b>n1 + n2</b> ways to do the task<br>
-										<br>
-										<b>Set Theoretic Version of the Sum Rule</b><br>
-										| A U B | = | A | + | B | <br>
-										When the tasks are disjoint
-										</p>
+											<b>Eulerian Cycle</b><br>
+											Eulerian circuit, Euler Tour
+											<br>Is a cycle that uses each edge precisely once. If such a cycle exists, the graph is called Eulerian or Unicursal.
+										</div>
+	
+										<div class="box">
+											<b>Theorem 1</b><br>
+											A connected graph G is Eulerian if and only if G is connected and has no vertices of odd degree
+											<br>A connected multigraph with at least two vertices has an Euler circuit if and only if each of its vertices has an even degree.
+	
+										</div>
+										<div class="box">
+											<b>Theorem 2</b><br>
+											A connected multigraph has an Euler path but not an Euler circuit if and only if it has exactly two vertices of odd degree.
+										</div>
 									</div>
+
+									<div class="box" style="border-width: 3px;">
+										<h3>Hamiltonian</h3>
+										<div class="box">
+											<b>Hamiltonian path</b><br>
+											is a path that visits each vertex exactly once
+										</div>
+	
+										<div class="box">
+											<b>Hamiltonian Cycle</b><br>
+											(also called Hamiltonian circuit, vertex tour, or graph cycle) is a cycle that visits each vertex exactly once
+											(except for the starting vertex, which is visited once at the start and once again at the end).
+
+										</div>
+	
+										<div class="box">
+											A graph that contains a Hamiltonian path is called a traceable graph. A graph that contains a Hamiltonian cycle 
+											is called a Hamiltonian graph. Any Hamiltonian cycle can be converted to a Hamiltonian path by removing one of
+											its edges, but a Hamiltonian path can be extended to Hamiltonian cycle only if its endpoints are adjacent.
+										</div>
+									</div>
+									
+
+								
 									<hr class="major" />
 
 									<h2>2. Analysis</h2>
-									<p>The basics of counting refer to the primary and fundamental concepts of finding all the possible arrangements of a certain object or finding all the possible outcomes of an event that is likely to happen. This part talks about the main principle of Combinatorics which finding all the possibilities using the product and sum rules. The basics of counting are crucial in many applications in computer science. For example, in the next part number: </p>
+									<p>Euler and Hamiltonian paths describe the ways to traverse a graph from one vertex to another along its edges. In a graph where 
+										it shows a roadmap of a network or relationship of connected cities, finding the ideal way to traverse each road to or from
+										each city could be done using these graph analyses of Euler and Hamiltonian paths. These paths provide insights into better 
+										alternatives or routes to cities or computer networks alike. Understanding the theorems of both Euler and Hamiltonian above
+										will help us understand how to properly optimize ways of traveling from one vertex to another.
+									</p>
 									<hr class="major" />
 
 									<h2>3. Applications, Real-Life Scenarios or Examples</h2>
-									<p><b>Used in:  </b>
-									<br> - <b>Password Generation</b>
-									<br> -  <b>Voting Ballot</b>
-									<br> - 	Plate numbers
-									<br> - 	Communication Networks
-									<br> - 	Cryptography
-									<br> - 	Computer Algorithms
-									<br> - 	Probability for Machine Learning
+									<p><b>Used in: </b>
+									<br> - Network Routing
+									<br> -  Graph Theory Algorithms
+									<br> - 	Robotics and Path Planning
+									<br> - 	Google Maps and other related map apps
+									<br> -  Game development
 									<br><br>
-									<h3><b>Password Generation</b></h3><a href="#" class="image"><img src="images/E1-01-02.PNG" alt="" style="width: 80%"/></a>
-									<blockquote><b>Example 1.1.1 - Product Rule: </b> if you have a choice of 26 letters (n = 26) and need to create a 4-letter password (m = 4), the product rule tells us that there are 26^4 = 456,976 possible combinations.
-									<br>(Image not accurate but related)</blockquote>
+
+									<a href="#" class="image"><img src="images/E3-02-02.png" alt="" style="width: 60%"/></a>
+									<blockquote><b>Example 3.2.1 :</b> Google Maps - A simple application of Eulerian path.
+									</blockquote>
+
+									<a href="#" class="image"><img src="images/E3-02-03.png" alt="" style="width: 100%"/></a>
+									<blockquote><b>Example 3.2.2 :</b> Google Earth - A simple Hamiltonian path for all cities of Great Britain.
+									</blockquote>
 									</p>
 									
-									<h3><b>Password Generation</b></h3><a href="#" class="image"><img src="images/E1-01-03.PNG" alt="" style="width: 72%"/></a>
-									<blockquote><b>Example 1.1.2 - Sum Rule: </b> In an election, if there are 'n1' candidates running for president and 'n2' candidates running for vice president, the sum rule tells us that there are 'n1 + n2' possible combinations of the president and vice president. This principle applies when choices are mutually exclusive.
-									</blockquote>
 
 									<hr class="major" />
 
 									<h2>4. Reflection and Thoughts</h2>
 									<p style="text-align: justify;">
-										The Basics of Counting is the first and essential topic that is introduced in this subject. It is the foundation of most of the mathematical logic for computers. Product and sum rules on their own are mostly easy to understand in problem-solving. Combining these rules will have unique questions and results which I find a bit difficult to understand. 
-										This topic and the questions and problems along with it are difficult to distinguish from another topic in the next few lessons of the course, mainly permutations, and combinations. 
-										Overall, this topic was quite challenging as a first topic for this course but is important for the entirety of it. 
-											
+										Euler and Hamiltonian paths help us understand from a traveling perspective as to where is the ideal path 
+										to reach all vertices or edges towards our destination. Unlike the previous topic of simply describing the
+										types and kinds of graphs, this explains how to make use of such graphs to create inferences as to what
+										is the ideal approach to a certain problem we need to answer in relation to the given graph. Understanding
+										this lesson was relatively easy as the first part of Exam 3 which elaborated graph models and types.
+										With a bit of practice and memorization of the theorems given, I could say that I have confidently
+										fully understood Eulerian and Hamiltonian paths. The next and last topic of finding the shortest 
+										path has also the same difficulty as this topic, except for the application of Dijkstra’s Algorithm. 
+
+
 									</p>
 								</section>
 
@@ -128,25 +163,25 @@
 										<li>
 											<span class="opener">Topics : Exam 1</span>
 											<ul>
-												<li><a href="#">Exam 1 - 01 - Basics of Counting</a></li>
-												<li><a href="#">Exam 1 - 02 - Pigeonhole Principle</a></li>
-												<li><a href="#">Exam 1 - 03 - Permutation and Combination</a></li>
+												<li><a href="E1-01.html">Exam 1 - 01 - Basics of Counting</a></li>
+												<li><a href="E1-02.html">Exam 1 - 02 - Pigeonhole Principle</a></li>
+												<li><a href="E1-03.html">Exam 1 - 03 - Permutation and Combination</a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener">Topics : Exam 2</span>
 											<ul>
-												<li><a href="#">Exam 2 - 09 - Finite Probability</a></li>
-												<li><a href="#">Exam 2 - 10 - Probability Theory</a></li>
-												<li><a href="#">Exam 2 - 11 - Bayes Theorem</a></li>
+												<li><a href="E2-01.html">Exam 2 - 09 - Finite Probability</a></li>
+												<li><a href="E2-02.html">Exam 2 - 10 - Probability Theory</a></li>
+												<li><a href="E2-03.html">Exam 2 - 11 - Bayes Theorem</a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener">Topics : Exam 3</span>
 											<ul>
-												<li><a href="#">Exam 3 - 13 - Graphs and Graph Models</a></li>
-												<li><a href="#">Exam 3 - 17 - Euler and Hamiltonian Paths</a></li>
-												<li><a href="#">Exam 3 - 18 - Shortest Path Problems</a></li>
+												<li><a href="E3-01.html">Exam 3 - 13 - Graphs and Graph Models</a></li>
+												<li><a href="E3-02.html">Exam 3 - 17 - Euler and Hamiltonian Paths</a></li>
+												<li><a href="E3-03.html">Exam 3 - 18 - Shortest Path Problems</a></li>
 
 											</ul>
 										</li>
@@ -156,23 +191,25 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Other Topics in Exam 1:</h2>
+										<h2>Other Topics in Exam 3:</h2>
 									</header>
 									<div class="mini-posts">
 										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3>Exam 1 - 02 - Pigeonhole Principle</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<a href="E3-01.html" class="image"><img src="images/E3-01-01.png" alt="" /></a>
+											<h3>Exam 3 - 01 - Graphs and Graph Models</h3>
+											<p>What is a graph?</p>
 										</article>
+										<ul class="actions">
+											<li><a href="E3-01.html" class="button">More</a></li>
+										</ul>
 										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<h3>Exam 1 - 03 - Permutation and Combination</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<a href="E3-03.html" class="image"><img src="images/E3-03-01.png" alt="" /></a>
+											<h3>Exam 3 - 03 - Shortest Path Problems</h3>
+											<p>Finding shortest paths</p>
 										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
+										<ul class="actions">
+											<li><a href="E3-03.html" class="button">More</a></li>
+										</ul>
 								</section>
 
 							<!-- Section -->
@@ -184,14 +221,14 @@
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">knbehimino@up.edu.ph</a></li>
 										<li class="icon solid fa-phone">09267217227</li>
-										<li class="icon solid fa-home">Gneral Santos City,<br />
+										<li class="icon solid fa-home">General Santos City,<br />
 										Philippines</li>
 									</ul>
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; All rights reserved.  Design adapted from: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; All rights reserved.</p>
 								</footer>
 
 						</div>

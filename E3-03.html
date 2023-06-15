@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Exam 1 - 01 - Basics of Counting</title>
+		<title>Exam 3 - 03 - Shortest Path Problems</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,72 +35,80 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Exam 1 - 01 - Basics of Counting</h1>
+										<h1>Exam 3 - 03 - Shortest Path Problems</h1>
 									</header>
 
-									<span class="image main"><img src="images/E1-01-01.PNG" alt="" style="width: 50%" /></span>
+									<span class="image main"><img src="images/E3-03-01.png" alt="" style="width: 100%" /></span>
 									<hr class="major" />
 
 									<h2>1. Overall Learnings / Summary of the Topic</h2>
-									<p><b>Combinatorics</b><br>
-										The study of arrangements of objects. It essentially talks about the patterns that may arise when objects are randomly arranged with certain properties.<br> These include permutation, enumeration, and combinations of the set of given elements. 
-										<br><br><b>Basic Counting Principles</b>
-										
+
 										<div class="box">
-											<b><h4>Product rule</h4></b>
-											- <b>n1(first task) * n2(second task)</b> ways to do a procedure<br>
-											- Applicable when a procedure is made up of separate tasks<br><br>
-											<b>When order matters:</b><br>
-											Permutation is used<br>
-											- n! / (n-r)!<br>
-											- P(n,r) when the order of a choice matters (Also known as an r-permutation)<br><br>
-											<b>Set Theoretic Version of Product Rule</b><br>
-											| AxB | = | A | * | B |<br>
-											When tasks are disjoint<br><br></div>
-										
+											<b>Shortest Path</b><br>
+											<a href="#" class="image"><img src="images/E3-03-02.png" alt="" style="width: 60%"/></a>
+										</div>
+	
 										<div class="box">
-										<b>Sum Rule</b><br>
-										If a task can be done with either one in n1 ways or n2 ways which no n-ways are the same:<br>
-										<b>n1 + n2</b> ways to do the task<br>
-										<br>
-										<b>Set Theoretic Version of the Sum Rule</b><br>
-										| A U B | = | A | + | B | <br>
-										When the tasks are disjoint
-										</p>
-									</div>
+											<b>Single-Source Shortest Path Problem</b><br>
+											The problem of finding shortest paths from a source vertex v to all other vertices in the graph.
+										</div>
+	
+										<div class="box">
+											<b>Dijkstra’s Algorithm</b><br>
+											- is a solution to the single-source shortest path problem in graph theory.
+											<br>- Works on both directed and undirected graphs. However, all edges must have nonnegative weights.
+											<br>- Approach: Greedy
+											<br>- Input: Weighted graph G={E,V} and source vertex v an element of V, such that all edge weights are nonnegative
+											<br>- Output: Lengths of shortest paths (or the shortest paths themselves) from a given source vertex v∈V to all other vertices
+										</div>
+
 									<hr class="major" />
 
 									<h2>2. Analysis</h2>
-									<p>The basics of counting refer to the primary and fundamental concepts of finding all the possible arrangements of a certain object or finding all the possible outcomes of an event that is likely to happen. This part talks about the main principle of Combinatorics which finding all the possibilities using the product and sum rules. The basics of counting are crucial in many applications in computer science. For example, in the next part number: </p>
+									<p>Finding the shortest path can be easy when using basic common sense for a human to do it. Applying this ability to computers
+										is far more difficult as it uses multiple algorithms to be able to find the shortest route possible. Understanding how 
+										single-source shortest path problems (SSSP) are solved, we must first understand a well-known algorithm in computer 
+										science for finding such a path. Dijkstra’s Algorithm, made by Edsger Wybe Dijkstra, is one of the solutions for SSSPs.
+										Understanding it takes time but it is one of the fundamental solutions for finding the shortest path.
+
+									</p>
 									<hr class="major" />
 
 									<h2>3. Applications, Real-Life Scenarios or Examples</h2>
-									<p><b>Used in:  </b>
-									<br> - <b>Password Generation</b>
-									<br> -  <b>Voting Ballot</b>
-									<br> - 	Plate numbers
-									<br> - 	Communication Networks
-									<br> - 	Cryptography
-									<br> - 	Computer Algorithms
-									<br> - 	Probability for Machine Learning
+									<p><b>Used in: </b>
+									<br> - Network Routing
+									<br> -  Robot motion planning
+									<br> - 	Map/Route Generation in traffic
 									<br><br>
-									<h3><b>Password Generation</b></h3><a href="#" class="image"><img src="images/E1-01-02.PNG" alt="" style="width: 80%"/></a>
-									<blockquote><b>Example 1.1.1 - Product Rule: </b> if you have a choice of 26 letters (n = 26) and need to create a 4-letter password (m = 4), the product rule tells us that there are 26^4 = 456,976 possible combinations.
-									<br>(Image not accurate but related)</blockquote>
-									</p>
-									
-									<h3><b>Password Generation</b></h3><a href="#" class="image"><img src="images/E1-01-03.PNG" alt="" style="width: 72%"/></a>
-									<blockquote><b>Example 1.1.2 - Sum Rule: </b> In an election, if there are 'n1' candidates running for president and 'n2' candidates running for vice president, the sum rule tells us that there are 'n1 + n2' possible combinations of the president and vice president. This principle applies when choices are mutually exclusive.
+
+									<a href="#" class="image"><img src="images/E3-03-03.gif" alt="" style="width: 100%"/></a>
+									<h4>Steps in Dijkstra’s Algorithm:</h4>
+									<blockquote><b>Example 3.3.1 :</b> 
+										<br>1. Initialize: Set the distance of the source vertex to 0 and all other vertices to infinity. Mark all vertices as unvisited.
+										<br>2. Select the vertex with the minimum distance from the priority queue.
+										<br>3. For each unvisited neighbor of the selected vertex, calculate the tentative distance by adding the weight of the edge to the current distance.
+										<br>4. If the tentative distance is smaller than the current distance, update the distance.
+										<br>5. Mark the selected vertex as visited.
+										<br>6. Repeat steps 2-5 until all vertices have been visited or the destination vertex has been reached.
+
+
 									</blockquote>
+
+									
 
 									<hr class="major" />
 
 									<h2>4. Reflection and Thoughts</h2>
 									<p style="text-align: justify;">
-										The Basics of Counting is the first and essential topic that is introduced in this subject. It is the foundation of most of the mathematical logic for computers. Product and sum rules on their own are mostly easy to understand in problem-solving. Combining these rules will have unique questions and results which I find a bit difficult to understand. 
-										This topic and the questions and problems along with it are difficult to distinguish from another topic in the next few lessons of the course, mainly permutations, and combinations. 
-										Overall, this topic was quite challenging as a first topic for this course but is important for the entirety of it. 
-											
+										Understanding Dijkstra’s Algorithm was quite challenging as understanding Bayes’ Theorem but it was not harder
+										than Theorem. At first, it was very intimidating as it was briefly discussed in class with infinite symbols,
+										and no algorithm process was written or presented while finding the shortest path. The process was only briefly 
+										flashed and then was instantly applied. After some understanding through some online resources was then I 
+										understood the process in its entirety. It was not as difficult as I expected, it was only misunderstood at 
+										first as complex. As of writing this, I have understood this algorithm better than Bayes’. I could see the
+										applications of understanding Dijkstra’s algorithm in real-life scenarios in computer science as Maps are
+										the first thing to come into mind when dealing with graphs. Understanding it definitely made it clear to
+										me how Google Maps and other map apps find the best and optimal route to a destination.
 									</p>
 								</section>
 
@@ -128,25 +136,25 @@
 										<li>
 											<span class="opener">Topics : Exam 1</span>
 											<ul>
-												<li><a href="#">Exam 1 - 01 - Basics of Counting</a></li>
-												<li><a href="#">Exam 1 - 02 - Pigeonhole Principle</a></li>
-												<li><a href="#">Exam 1 - 03 - Permutation and Combination</a></li>
+												<li><a href="E1-01.html">Exam 1 - 01 - Basics of Counting</a></li>
+												<li><a href="E1-02.html">Exam 1 - 02 - Pigeonhole Principle</a></li>
+												<li><a href="E1-03.html">Exam 1 - 03 - Permutation and Combination</a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener">Topics : Exam 2</span>
 											<ul>
-												<li><a href="#">Exam 2 - 09 - Finite Probability</a></li>
-												<li><a href="#">Exam 2 - 10 - Probability Theory</a></li>
-												<li><a href="#">Exam 2 - 11 - Bayes Theorem</a></li>
+												<li><a href="E2-01.html">Exam 2 - 09 - Finite Probability</a></li>
+												<li><a href="E2-02.html">Exam 2 - 10 - Probability Theory</a></li>
+												<li><a href="E2-03.html">Exam 2 - 11 - Bayes Theorem</a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener">Topics : Exam 3</span>
 											<ul>
-												<li><a href="#">Exam 3 - 13 - Graphs and Graph Models</a></li>
-												<li><a href="#">Exam 3 - 17 - Euler and Hamiltonian Paths</a></li>
-												<li><a href="#">Exam 3 - 18 - Shortest Path Problems</a></li>
+												<li><a href="E3-01.html">Exam 3 - 13 - Graphs and Graph Models</a></li>
+												<li><a href="E3-02.html">Exam 3 - 17 - Euler and Hamiltonian Paths</a></li>
+												<li><a href="E3-03.html">Exam 3 - 18 - Shortest Path Problems</a></li>
 
 											</ul>
 										</li>
@@ -156,23 +164,25 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Other Topics in Exam 1:</h2>
+										<h2>Other Topics in Exam 3:</h2>
 									</header>
 									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3>Exam 1 - 02 - Pigeonhole Principle</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										<<article>
+											<a href="E3-01.html" class="image"><img src="images/E3-01-01.png" alt="" /></a>
+											<h3>Exam 3 - 01 - Graphs and Graph Models</h3>
+											<p>What is a graph?</p>
 										</article>
+										<ul class="actions">
+											<li><a href="E3-01.html" class="button">More</a></li>
+										</ul>
 										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<h3>Exam 1 - 03 - Permutation and Combination</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<a href="E3-02.html" class="image"><img src="images/E3-02-01.png" alt="" /></a>
+											<h3>Exam 3 - 02 - Euler and Hamiltonian Paths</h3>
+											<p>Ways to traverse a graph</p>
 										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
+										<ul class="actions">
+											<li><a href="E3-02.html" class="button">More</a></li>
+										</ul>
 								</section>
 
 							<!-- Section -->
@@ -184,14 +194,14 @@
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">knbehimino@up.edu.ph</a></li>
 										<li class="icon solid fa-phone">09267217227</li>
-										<li class="icon solid fa-home">Gneral Santos City,<br />
+										<li class="icon solid fa-home">General Santos City,<br />
 										Philippines</li>
 									</ul>
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; All rights reserved.  Design adapted from: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; All rights reserved.</p>
 								</footer>
 
 						</div>
